@@ -120,15 +120,21 @@ class Mahasiswacontroller extends BaseController
 
     public function update($id)
     {
-        dd($this->request->getVar());
+        $modelUser = new \App\Models\usermodels();
+        
+        $modelUser->save([
+            'id' => $id,
+            'NPM' => $this->request->getVar('NPM'),
+            'Nama' => $this->request->getVar('Nama'),
+            'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+            'fakultas' => $this->request->getVar('fakultas'),
+            'tanggal_lahir' => $this->request->getVar('tanggal_lahir'),
+            'no_telp' => $this->request->getVar('no_telp'),
+            'alamat' => $this->request->getVar('alamat')
+        ]);  
+
+        return redirect()->to('/');
     }
 
-
-    // public function index()
-    // {
-    //     $users = new UserModel();
-    //     $data = $users->getUsers();
-    //     return view('user', compact('data'));
-    // }
 
 }

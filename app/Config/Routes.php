@@ -35,8 +35,8 @@ $routes->get('/', 'mahasiswacontroller::index');
 $routes->get('/tambahdata', 'mahasiswacontroller::tambah');
 $routes->get('/editdata/(:segment)', 'mahasiswacontroller::edit/$1');
 $routes->post('/tambahdata/store', 'mahasiswacontroller::store');
+$routes->post('/editdata/update/(:segment)', 'mahasiswacontroller::update/$1');
 $routes->get('/hapusdata/(:any)', 'mahasiswacontroller::delete/$1');
-$routes->get('/editdata/update', 'mahasiswacontroller::update/$1');
 
 
 /*
